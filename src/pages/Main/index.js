@@ -55,8 +55,6 @@ export default class Main extends Component {
 
             const response = await api.get(`/repos/${newRepo}`);
 
-            return response;
-
             // if (!response.status !== 200) throw 'Repositório inexistente';
 
             const data = {
