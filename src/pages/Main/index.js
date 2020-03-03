@@ -55,8 +55,6 @@ export default class Main extends Component {
 
             const response = await api.get(`/repos/${newRepo}`);
 
-            // if (!response.status !== 200) throw 'Repositório inexistente';
-
             const data = {
                 name: response.data.full_name,
             };
@@ -68,7 +66,7 @@ export default class Main extends Component {
                 error: null,
             });
         } catch (error) {
-            this.setState({ error: true, msg: error });
+            this.setState({ error: true, msg: error.message || error });
         } finally {
             this.setState({ loading: false });
         }
